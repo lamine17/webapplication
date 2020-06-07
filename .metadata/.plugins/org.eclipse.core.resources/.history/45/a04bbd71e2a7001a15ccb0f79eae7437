@@ -1,0 +1,88 @@
+package com.forummatch.pckg;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/**
+ * Servlet implementation class Soumission
+ */
+@WebServlet("/Soumission")
+public class Soumission extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private static final String PATH_TO_TOPICS = GetRessources.PATH_TO_TOPICS;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Soumission() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String topic_id = request.getParameter("id_topic");
+		String message = request.getParameter("soum_mess");
+		saveMess(message,PATH_TO_TOPICS+topic_id);
+	}
+	
+	public void saveMess(String message, String file_name) {
+		String chaine;
+		String data = "";
+		String[] tab;
+		int maxInt = 0;
+		try {
+			FileReader fileReader = new FileReader(file_name);
+			Scanner myReader = new Scanner(fileReader);
+		    while(myReader.hasNextLine()) {
+		    	chaine = myReader.nextLine();
+		    	data += chaine+"\n";
+		    	tab = chaine.split(SPLIT_STRING);
+		    	if(tab[0].equals(id)) {
+		    		isIn = true;
+		    	}
+		    }
+		    myReader.close();
+		    fileReader.close();
+		    //Si le match est deja dans le fichier on ne le rajoute pas
+		    if(!isIn) {
+		    	debut_data = id + SPLIT_STRING+matchdoc.getString("home_name")+SPLIT_STRING + matchdoc.getString("score")+SPLIT_STRING+matchdoc.getString("away_name")+SPLIT_STRING+matchdoc.getString("added")+"\n";
+		    	data = debut_data+data;
+		    	//On crée egalement le fichier topic du message, celui qui contiendra les messages
+		    	File myNF = new File(PATH_TO_TOPICS+id);
+		    	myNF.createNewFile();
+		    }
+		    
+		    
+		    FileWriter fileWriter = new FileWriter(FILE_NAME);
+		    fileWriter.write(data);
+		    fileWriter.close();
+		} catch (IOException | JSONException e) {
+		    e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

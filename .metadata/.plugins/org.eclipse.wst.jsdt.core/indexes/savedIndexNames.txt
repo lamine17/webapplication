@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/home/keita/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+17605795.index
+17605795.index
+416829656.index
+2811097588.index
+3801793883.index
+4205655462.index
+3422474968.index
+4290448191.index

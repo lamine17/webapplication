@@ -1,0 +1,138 @@
+package com.forummatch.pckg;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+import org.json.*;
+
+import java.util.Scanner;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+
+@WebListener
+public class GetRessources implements ServletContextListener {
+	private ScheduledExecutorService scheduler;
+	//interval en heure entre chaque contact vers l'api
+	private static final int INTERVALLE_H = 12;
+	private static final String SPLIT_STRING = ";;;";
+	private static final String FILE_NAME = "ressources/topic_names";
+	private static final String API_URL = "https://livescore-api.com/api-client/scores/live.json?key=g7fnkE8fceS1aLXU&secret=l4go9oCsLxrf51fm9vKtaSIm7BohmlcH";
+	
+	private class GetFromApi implements Runnable{
+		@Override
+		public void run() {
+			BufferedReader br = null;
+	        try {
+	            URL url = new URL(API_URL);
+	            br = new BufferedReader(new InputStreamReader(url.openStream()));
+
+	            String line;
+
+	            StringBuilder sb = new StringBuilder();
+
+	            while ((line = br.readLine()) != null) {
+	                sb.append(line);
+	                sb.append(System.lineSeparator());
+	            }
+	            JSONObject jdoc = new JSONObject(sb.toString());
+	            //JsonElement jelement = new JsonParser().parse(sb);
+	            
+	            if (jdoc.getBoolean("success")) {
+	            	ReadApi((JSONArray) jdoc.getJSONObject("data").get("match"));
+	            	
+	            }
+	            else {
+	            	return;
+	            }
+	       
+	            
+	            
+	        } catch (IOException | JSONException  e) { 
+	        	e.printStackTrace();
+	        	
+	        
+			}
+	        try {
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public void saveMatch(JSONObject matchdoc) {
+			String chaine, debut_data;
+			String[] tab;
+			String data = "";
+			boolean isIn = false;
+			try {
+				FileReader fileReader = new FileReader(FILE_NAME);
+				String id = ""+matchdoc.getInt("id");
+				Scanner myReader = new Scanner(fileReader);
+			    while(myReader.hasNextLine()) {
+			    	chaine = myReader.nextLine();
+			    	data += chaine+"\n";
+			    	tab = chaine.split(SPLIT_STRING);
+			    	if(tab[0].equals(id)) {
+			    		isIn = true;
+			    	}
+			    }
+			    myReader.close();
+			    fileReader.close();
+			    //Si le match est deja dans le fichier on ne le rajoute pas
+			    if(!isIn) {
+			    	debut_data = id + SPLIT_STRING + matchdoc.getString("away_name")+SPLIT_STRING+matchdoc.getString("score")+SPLIT_STRING+matchdoc.getString("home_name")+SPLIT_STRING+matchdoc.getString("added")+"\n";
+			    	data = debut_data+data;
+			    }
+			    
+			    
+			    FileWriter fileWriter = new FileWriter(FILE_NAME);
+			    fileWriter.write(data);
+			    fileWriter.close();
+			} catch (IOException | JSONException e) {
+			    e.printStackTrace();
+			}
+
+		}
+		
+		public void ReadApi(JSONArray jdoc) {
+			JSONObject match;
+			int i = 0;
+			try {
+				while(true) {
+					try {
+						match = jdoc.getJSONObject(i);
+						if(!match.getString("status").equals("FINISHED")) {
+							continue;
+						}
+						else {
+							saveMatch(match);
+						}
+					} catch (IndexOutOfBoundsException e) {
+						break;
+					}
+					i++;
+				}
+			} catch (JSONException e) {e.printStackTrace();}
+		}
+	}
+	
+	@Override
+	public void contextInitialized(ServletContextEvent event) {
+	    scheduler = Executors.newSingleThreadScheduledExecutor();
+	    scheduler.scheduleAtFixedRate(new GetFromApi(), 0, INTERVALLE_H, TimeUnit.HOURS);
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent event) {
+	    scheduler.shutdownNow();
+	 }
+}

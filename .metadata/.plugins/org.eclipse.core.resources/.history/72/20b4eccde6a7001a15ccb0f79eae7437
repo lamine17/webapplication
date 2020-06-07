@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page d'acceuil</title>
+</head>
+<body>
+	<form action="acceuil1.html">
+		<input type="submit" value="Forum des match" />
+	</form>
+</body>
+</html>

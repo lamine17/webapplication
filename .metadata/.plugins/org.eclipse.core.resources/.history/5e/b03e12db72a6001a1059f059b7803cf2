@@ -1,0 +1,83 @@
+package com.forummatch.pckg;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ * Servlet implementation class Accueil
+ */
+@WebServlet("/Accueil")
+public class Accueil extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	//decrit le nombre de topic apparaissant sur la page d'acceuil
+	private static final int SIZE_MAIN_PAGE = 12;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Accueil() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String[] topic_names = new String[SIZE_MAIN_PAGE];
+		String[] topic_ids = new String[SIZE_MAIN_PAGE];
+		int j;
+		String chaine = "<body>\n";
+		//Mettre dans topic_names et topic_ids les noms et les identifiants des topics
+		//depuis la ressource
+		String[] tab;
+		int i = 0;
+		try {
+			File myF = new File("ressources/topic_names.txt");
+			Scanner myReader = new Scanner(myF);
+			while (myReader.hasNextLine() && (i<SIZE_MAIN_PAGE)) {
+				String line = myReader.nextLine();
+			  	tab = line.split(" ");
+				topic_ids[i] 	= tab[0];
+			  	topic_names[i] 	= tab[1];
+			  	i++;
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		
+		
+		
+		//Incorporer les tableaux dans la reponse
+		
+		for(j=1;j<i+1;j++) {
+			chaine += "<p id=\"entree"+j+"\" value=\""+topic_names[j-1]+"\" />\n";
+			chaine += "<p id=\"entreeh"+j+"\" value=\""+topic_ids[j-1]+"\" />\n";
+		}
+		chaine += "</body>";
+		response.getWriter().write(chaine);
+		response.setContentType("text/xml");
+	    response.setHeader("Cache-Control", "no-cache");
+		//Obtenir avec getparameter la date du dernier rafraichissement par le client
+		//envoyer les changements depuis sous forme json
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

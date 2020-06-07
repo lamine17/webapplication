@@ -1,0 +1,49 @@
+package com.forummatch.pckg;
+
+import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class GetWebpage
+ */
+@WebServlet("/GetWebpage")
+public class GetWebpage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ScheduledExecutorService scheduler;
+	//interval entre chaque contact à l'api en heures
+	private static final int INTERVALLE_H = 1;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GetWebpage() {
+        super();
+        scheduler = Executors.newSingleThreadScheduledExecutor();
+        scheduler.scheduleAtFixedRate(new HourlyJob(), 0, INTERVALLE_H, TimeUnit.HOURS);
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

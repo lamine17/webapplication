@@ -1,0 +1,107 @@
+package com.forummatch.pckg;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/**
+ * Servlet implementation class Topic
+ */
+@WebServlet("/Topic")
+public class Topic extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	//decrit le nombre de messages apparaissant sur la page d'acceuil
+	private static final int SIZE_PAGE = 12;
+	private static final String PATH_TO_TOPICS = GetRessources.PATH_TO_TOPICS;
+	public static final String SPLIT_STRING = GetRessources.SPLIT_STRING;
+	
+    public Topic() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int page = Integer.parseInt(request.getParameter("page"));
+		String topic_id = request.getParameter("id_topic");
+		String[] message = new String[SIZE_PAGE];
+		String[] message_id = new String[SIZE_PAGE];
+		int i = 0;
+		int j = 0;
+		int k;
+		JSONObject jdoc = new JSONObject();
+		String tab[];
+		
+		try {
+			File myF = new File(PATH_TO_TOPICS+topic_id);
+			Scanner myReader = new Scanner(myF);
+			while (myReader.hasNextLine() && (i<(page-1)*SIZE_PAGE)) {
+				myReader.nextLine();
+			  	i++;
+			}
+			while (myReader.hasNextLine() && (i<SIZE_PAGE+((page-1)*SIZE_PAGE))) {
+				String line = myReader.nextLine();
+			  	tab = line.split(SPLIT_STRING);
+			  	message_id[j] 	= tab[0];
+			  	message[j] 	= tab[1];
+			  	j++;
+			  	i++;
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		try {
+			for(k=1;k<j+1;k++) {
+					System.out.println("avant---"+message[k-1]+"---avant");
+				
+					jdoc.accumulate(""+k, message[k-1].replaceAll("&nl;","\n"));
+					jdoc.accumulate("ee"+k, message_id[k-1]);	
+				    
+				    System.out.println("apres---"+message[k-1].replaceAll("&nl;","\n")+"---apres");
+			}
+			if(page>1) {
+				jdoc.accumulate("prec", "submit");
+			}
+			else {
+				jdoc.accumulate("prec", "hidden");
+			}
+			if(page<(i/SIZE_PAGE)+1) {
+
+				jdoc.accumulate("suiv", "submit");
+			}
+			else {
+				jdoc.accumulate("suiv", "hidden");
+			}
+		} catch (JSONException e) {e.printStackTrace();}
+		response.getWriter().write(jdoc.toString());
+		response.setContentType("application/json");
+	    response.setHeader("Cache-Control", "no-cache");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

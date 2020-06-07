@@ -1,0 +1,65 @@
+package com.forummatch.pckg;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Topic
+ */
+@WebServlet("/Topic")
+public class Topic extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	//decrit le nombre de messages apparaissant sur la page d'acceuil
+	private static final int SIZE_PAGE = 12;
+	
+    public Topic() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String topic_name = request.getParameter("titre_topic");
+		String[] message = new String[SIZE_PAGE];
+		String[] message_id = new String[SIZE_PAGE];
+		int i;
+		String chaine = "<body>\n";
+		
+		chaine += "<p id=\"titre\" value=\""+topic_name+"\" />\n";
+		
+		for(i=0;i<SIZE_PAGE;i++) {
+			//a prendre depuis la ressource!!!
+			message[i] 	= "message numero - "+i;
+			message_id[i] 	= "identifiant universel du message  - "+i;
+		}
+		
+		for(i=1;i<SIZE_PAGE+1;i++) {
+			chaine += "<p id=\"entree"+i+"\" value=\""+message[i-1]+"\" />\n";
+			chaine += "<p id=\"entreeh"+i+"\" value=\""+message_id[i-1]+"\" />\n";
+		}
+		chaine += "</body>";
+		response.getWriter().write(chaine);
+		response.setContentType("text/xml");
+	    response.setHeader("Cache-Control", "no-cache");
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

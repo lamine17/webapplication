@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebListener"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContextListener"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ScheduledExecutorService"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContextEvent"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.net.MalformedURLException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.StringReader"/>
+    <fullyQualifiedTypeName name="jdk.nashorn.internal.parser.JSONParser"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.FileUtils"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.parser.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Sun Jun 07 10:47:04 CEST 2020
+org.eclipse.jst.jee.server\:/binary\:/home/keita/workspace/forum_match/WebContent/WEB-INF/lib/jasper.jar=/home/keita/workspace/apache-tomcat-9.0.35/wtpwebapps/forum_match/WEB-INF/lib/jasper.jar
+org.eclipse.jst.jee.server\:forum_match=/home/keita/workspace/apache-tomcat-9.0.35/wtpwebapps/forum_match
+org.eclipse.jst.jee.server\:/binary\:/home/keita/workspace/forum_match/WebContent/WEB-INF/lib/tomcat-websocket.jar=/home/keita/workspace/apache-tomcat-9.0.35/wtpwebapps/forum_match/WEB-INF/lib/tomcat-websocket.jar
+org.eclipse.jst.jee.server\:/binary\:/home/keita/workspace/forum_match/WebContent/WEB-INF/lib/jasper-el.jar=/home/keita/workspace/apache-tomcat-9.0.35/wtpwebapps/forum_match/WEB-INF/lib/jasper-el.jar

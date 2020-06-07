@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtr HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Accueil forum</title>
+<style>
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+</style>
+<script type="text/javascript">
+var requete;
+
+//Nb de topic sur la page principal
+var nb_topic = 12;
+
+var page = 1;
+
+function prec(){
+	page = page -1;
+	valider();
+}
+
+function suiv(){
+	page = page +1;
+	valider();
+}
+
+function mise_en_place(){
+	for (let i = 1; i < nb_topic+1; i++) {
+		newTr = document.createElement("tr");
+		newTd = document.createElement("td");
+		newForm = document.createElement("form");
+		newInput = document.createElement("input");
+		newInputH = document.createElement("input");
+		newInput.setAttribute("type","submit");
+		newInput.setAttribute("value","topic"+i);
+		newInput.setAttribute("name","titre_topic");
+		newInput.setAttribute("id","entree"+i);
+		newInputH.setAttribute("type","hidden");
+		newInputH.setAttribute("name","id_topic");
+		newInputH.setAttribute("value","topic"+i);
+		newInputH.setAttribute("id","entree"+i+"h");
+		newForm.setAttribute("action","topic.html");
+	
+		document.getElementsByTagName("table")[0].appendChild(newTr);
+		newTr.appendChild(newTd);
+		newTd.appendChild(newForm);
+		newForm.appendChild(newInput);
+		newForm.appendChild(newInputH);
+	}
+	
+}
+
+
+function valider() {	
+	
+   var donnees = document.getElementById("donnees");
+   var url = "accueil?valeur=" + escape(donnees.value) + "&page="+page;
+   if (window.XMLHttpRequest) {
+       requete = new XMLHttpRequest();
+   } else if (window.ActiveXObject) {
+       requete = new ActiveXObject("Microsoft.XMLHTTP");
+   }
+   requete.open("GET", url, true);
+   requete.onreadystatechange = majIHM;
+   requete.send(null);
+}
+
+function majIHM() {
+  var message = "";
+
+  if (requete.readyState == 4) {
+    if (requete.status == 200) {
+      // exploitation des données de la réponse
+      var m = JSON.parse(requete.responseText);
+      //document.getElementById("page_suiv").setAttribute("type",m["suiv"]);
+      //document.getElementById("page_prec").setAttribute("type",m["prec"]);
+      for (let i = 1; i < nb_topic+1; i++) {
+    	  if((""+i) in m){
+    		document.getElementById("entree"+i+"h").value = m[""+i+"h"];
+    	  	document.getElementById("entree"+i).value = m[""+i];
+    	  }
+    	  else{
+    		  break;
+    	  }
+      }
+      for (let j = i;j<nb_topic+1;j++) {
+    	  //document.getElementById("entree"+j).setAttribute("type","hidden");
+    	  
+	   }
+      
+    }
+  }
+}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><input type="submit" id="donnees" value="rafraichir"
+				onclick="valider();" />
+				<div id="validationMessage"></div></td>
+		</tr>
+	</table>
+	<script>mise_en_place();</script>
+	 <input  id="page_prec" onclick="prec();" class="previous" type="hidden" value="&laquo; Page precedente">
+	<input id="page_suiv" onclick="suiv();" class="next" type="hidden" value="Page suivante &raquo;">
+</body>
+</html>

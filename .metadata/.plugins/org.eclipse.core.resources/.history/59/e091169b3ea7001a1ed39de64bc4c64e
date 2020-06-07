@@ -1,0 +1,6 @@
+package com.forummatch.pckg;
+
+public class GetWebpage {
+	public GetWebpage() {
+	}
+}

@@ -1,0 +1,17 @@
+forum_match est une application web simulant un forum de discussions sur differents match de foot de maniere simple. 
+L'application contact une fois par heure l'api externe se trouvant à l'adresse : https://livescore-api.com/. Elle recupere different resultat de match de foot sous forme json, chaque resultat forme dans al base de donnée une nouvelle discussion (ou topic).
+
+On peut sur chacune de ces discussions publier un nouveau message qui pourra être lu par les autres utilisateurs.
+
+Les noms de topic ainsi que les messages inclus dans ses topic sont sauvegardé dans des fichiers dans le dossier ressource. Chaque topic a un identifiant universel, on se sert de cet identifiant pour ecrire le fichier contenant la liste des message publiés dans celui ci sous la forme ressource/topic/[id du topic].
+
+Utilités des differents servlets:
+-Accueil -> permet de mettre en place la page prensentant la liste des topic.
+-Soumission -> permet la publication d'un message.
+-Topic -> permet de mettre en place une page d'un topic
+-GetRessources -> Permet de faire la synchronisation avec l'api externe.
+
+Utilités des differentes page html:
+-index.html -> page d'accueil
+-accueil.html -> page contenant la liste des topic
+-topic.html -> page d'un topic

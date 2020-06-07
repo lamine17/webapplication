@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>forum_match</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Accueil</servlet-name>
+		<servlet-class>com.forummatch.pckg.Accueil
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Topic</servlet-name>
+		<servlet-class>com.forummatch.pckg.Topic
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Accueil</servlet-name>
+		<url-pattern>/accueil</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Topic</servlet-name>
+		<url-pattern>/topic</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>GetWebpage</servlet-name>
+	    <servlet-class>com.forummatch.pckg</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+</web-app>

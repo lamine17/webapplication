@@ -1,0 +1,304 @@
+29-May-2020 14:55:26.828 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :   Apache Tomcat/9.0.35
+29-May-2020 14:55:26.831 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :       May 5 2020 20:36:20 UTC
+29-May-2020 14:55:26.831 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :    9.0.35.0
+29-May-2020 14:55:26.831 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :           Linux
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :            5.4.0-31-generic
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :          amd64
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :             /usr/lib/jvm/java-11-openjdk-amd64
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :           11.0.7+10-post-Ubuntu-3ubuntu1
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM : Ubuntu
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:55:26.832 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:55:26.840 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2020 14:55:26.840 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/keita/workspace/apache-tomcat-9.0.35/conf/logging.properties
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+29-May-2020 14:55:26.841 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:55:26.842 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:55:26.842 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/keita/workspace/apache-tomcat-9.0.35/temp
+29-May-2020 14:55:26.842 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [1.2.23] en utilisant APR version [1.6.5]
+29-May-2020 14:55:26.842 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Fonctionnalités d'APR : IPv6 [true], sendfile [true], accept filters [false], random [true]
+29-May-2020 14:55:26.842 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Configuration de APR/OpenSSL : useAprConnector [false], useOpenSSL [true]
+29-May-2020 14:55:26.844 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 1.1.1f  31 Mar 2020]
+29-May-2020 14:55:27.085 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:55:27.118 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector[HTTP/1.1-8080]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1033)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1057)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:584)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:607)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:303)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:455)
+		at java.base/sun.nio.ch.Net.bind(Net.java:447)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+		at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:228)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:211)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1154)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1030)
+		... 13 more
+29-May-2020 14:55:27.120 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [469] millisecondes
+29-May-2020 14:55:27.157 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+29-May-2020 14:55:27.157 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.35]
+29-May-2020 14:55:27.162 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples]
+29-May-2020 14:55:28.545 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples] de l'application web s'est terminé en [1 383] ms
+29-May-2020 14:55:28.545 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT]
+29-May-2020 14:55:28.580 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT] de l'application web s'est terminé en [35] ms
+29-May-2020 14:55:28.580 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager]
+29-May-2020 14:55:28.658 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager] de l'application web s'est terminé en [78] ms
+29-May-2020 14:55:28.658 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager]
+29-May-2020 14:55:28.696 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager] de l'application web s'est terminé en [38] ms
+29-May-2020 14:55:28.697 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs]
+29-May-2020 14:55:28.730 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs] de l'application web s'est terminé en [33] ms
+29-May-2020 14:55:28.734 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [1 613] millisecondes
+29-May-2020 14:56:21.999 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-May-2020 14:56:22.001 INFOS [Thread-2] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-May-2020 14:56:22.068 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:22.068 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:23.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :   Apache Tomcat/9.0.35
+29-May-2020 14:56:23.449 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :       May 5 2020 20:36:20 UTC
+29-May-2020 14:56:23.449 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :    9.0.35.0
+29-May-2020 14:56:23.449 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :           Linux
+29-May-2020 14:56:23.449 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :            5.4.0-31-generic
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :          amd64
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :             /usr/lib/jvm/java-11-openjdk-amd64
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :           11.0.7+10-post-Ubuntu-3ubuntu1
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM : Ubuntu
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:23.450 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:23.459 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2020 14:56:23.459 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2020 14:56:23.459 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2020 14:56:23.459 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/keita/workspace/apache-tomcat-9.0.35/conf/logging.properties
+29-May-2020 14:56:23.459 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/keita/workspace/apache-tomcat-9.0.35/temp
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [1.2.23] en utilisant APR version [1.6.5]
+29-May-2020 14:56:23.460 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Fonctionnalités d'APR : IPv6 [true], sendfile [true], accept filters [false], random [true]
+29-May-2020 14:56:23.461 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Configuration de APR/OpenSSL : useAprConnector [false], useOpenSSL [true]
+29-May-2020 14:56:23.463 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 1.1.1f  31 Mar 2020]
+29-May-2020 14:56:23.715 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:23.725 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector[HTTP/1.1-8080]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1033)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1057)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:584)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:607)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:303)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:455)
+		at java.base/sun.nio.ch.Net.bind(Net.java:447)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+		at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:228)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:211)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1154)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1030)
+		... 13 more
+29-May-2020 14:56:23.727 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [422] millisecondes
+29-May-2020 14:56:23.763 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+29-May-2020 14:56:23.763 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.35]
+29-May-2020 14:56:23.774 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples]
+29-May-2020 14:56:24.105 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples] de l'application web s'est terminé en [331] ms
+29-May-2020 14:56:24.106 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT]
+29-May-2020 14:56:24.119 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT] de l'application web s'est terminé en [13] ms
+29-May-2020 14:56:24.120 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager]
+29-May-2020 14:56:24.141 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager] de l'application web s'est terminé en [20] ms
+29-May-2020 14:56:24.141 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager]
+29-May-2020 14:56:24.155 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager] de l'application web s'est terminé en [14] ms
+29-May-2020 14:56:24.156 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs]
+29-May-2020 14:56:24.167 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs] de l'application web s'est terminé en [11] ms
+29-May-2020 14:56:24.172 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [444] millisecondes
+29-May-2020 14:56:37.920 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-May-2020 14:56:37.922 INFOS [Thread-2] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-May-2020 14:56:37.983 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:37.983 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:38.918 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :   Apache Tomcat/9.0.35
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :       May 5 2020 20:36:20 UTC
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :    9.0.35.0
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :           Linux
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :            5.4.0-31-generic
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :          amd64
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :             /usr/lib/jvm/java-11-openjdk-amd64
+29-May-2020 14:56:38.921 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :           11.0.7+10-post-Ubuntu-3ubuntu1
+29-May-2020 14:56:38.922 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM : Ubuntu
+29-May-2020 14:56:38.922 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:38.922 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/keita/workspace/apache-tomcat-9.0.35/conf/logging.properties
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-May-2020 14:56:38.930 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/keita/workspace/apache-tomcat-9.0.35/temp
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [1.2.23] en utilisant APR version [1.6.5]
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Fonctionnalités d'APR : IPv6 [true], sendfile [true], accept filters [false], random [true]
+29-May-2020 14:56:38.931 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Configuration de APR/OpenSSL : useAprConnector [false], useOpenSSL [true]
+29-May-2020 14:56:38.934 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 1.1.1f  31 Mar 2020]
+29-May-2020 14:56:39.186 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:39.197 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector[HTTP/1.1-8080]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1033)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1057)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:584)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:607)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:303)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:455)
+		at java.base/sun.nio.ch.Net.bind(Net.java:447)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+		at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:228)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:211)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1154)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1030)
+		... 13 more
+29-May-2020 14:56:39.200 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [426] millisecondes
+29-May-2020 14:56:39.237 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+29-May-2020 14:56:39.237 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.35]
+29-May-2020 14:56:39.242 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples]
+29-May-2020 14:56:39.571 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples] de l'application web s'est terminé en [329] ms
+29-May-2020 14:56:39.571 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT]
+29-May-2020 14:56:39.583 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT] de l'application web s'est terminé en [12] ms
+29-May-2020 14:56:39.583 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager]
+29-May-2020 14:56:39.602 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager] de l'application web s'est terminé en [19] ms
+29-May-2020 14:56:39.602 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager]
+29-May-2020 14:56:39.617 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager] de l'application web s'est terminé en [15] ms
+29-May-2020 14:56:39.617 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs]
+29-May-2020 14:56:39.630 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs] de l'application web s'est terminé en [12] ms
+29-May-2020 14:56:39.634 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [433] millisecondes
+29-May-2020 14:56:41.903 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-May-2020 14:56:41.905 INFOS [Thread-2] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-May-2020 14:56:41.954 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:41.954 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:50.261 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :   Apache Tomcat/9.0.35
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :       May 5 2020 20:36:20 UTC
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :    9.0.35.0
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :           Linux
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :            5.4.0-31-generic
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :          amd64
+29-May-2020 14:56:50.264 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :             /usr/lib/jvm/java-11-openjdk-amd64
+29-May-2020 14:56:50.265 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :           11.0.7+10-post-Ubuntu-3ubuntu1
+29-May-2020 14:56:50.265 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM : Ubuntu
+29-May-2020 14:56:50.265 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:50.265 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :         /home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:50.273 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2020 14:56:50.273 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2020 14:56:50.273 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2020 14:56:50.273 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/keita/workspace/apache-tomcat-9.0.35/conf/logging.properties
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:50.274 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/keita/workspace/apache-tomcat-9.0.35
+29-May-2020 14:56:50.275 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/keita/workspace/apache-tomcat-9.0.35/temp
+29-May-2020 14:56:50.275 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [1.2.23] en utilisant APR version [1.6.5]
+29-May-2020 14:56:50.275 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Fonctionnalités d'APR : IPv6 [true], sendfile [true], accept filters [false], random [true]
+29-May-2020 14:56:50.275 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Configuration de APR/OpenSSL : useAprConnector [false], useOpenSSL [true]
+29-May-2020 14:56:50.277 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 1.1.1f  31 Mar 2020]
+29-May-2020 14:56:50.543 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:50.557 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector[HTTP/1.1-8080]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1033)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1057)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:584)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:607)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:303)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Adresse déjà utilisée
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:455)
+		at java.base/sun.nio.ch.Net.bind(Net.java:447)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+		at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:80)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:228)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:211)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1154)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1030)
+		... 13 more
+29-May-2020 14:56:50.561 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [443] millisecondes
+29-May-2020 14:56:50.606 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+29-May-2020 14:56:50.607 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.35]
+29-May-2020 14:56:50.611 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples]
+29-May-2020 14:56:50.968 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/examples] de l'application web s'est terminé en [357] ms
+29-May-2020 14:56:50.969 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT]
+29-May-2020 14:56:50.985 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/ROOT] de l'application web s'est terminé en [17] ms
+29-May-2020 14:56:50.985 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager]
+29-May-2020 14:56:51.010 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/host-manager] de l'application web s'est terminé en [25] ms
+29-May-2020 14:56:51.010 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager]
+29-May-2020 14:56:51.028 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/manager] de l'application web s'est terminé en [18] ms
+29-May-2020 14:56:51.029 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs]
+29-May-2020 14:56:51.044 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/keita/workspace/apache-tomcat-9.0.35/webapps/docs] de l'application web s'est terminé en [14] ms
+29-May-2020 14:56:51.048 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [486] millisecondes
+29-May-2020 14:56:53.744 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-May-2020 14:56:53.747 INFOS [Thread-2] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-May-2020 14:56:53.778 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-May-2020 14:56:53.778 INFOS [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
